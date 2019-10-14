@@ -25,10 +25,6 @@ public class HomePage extends CommonPage {
     private WebElement noThanksIFrame;
     @FindBy(how = How.XPATH, using = "(//*[contains(@class,'ContinueOn')])[2]")
     private WebElement continueSecurelyButton;
-    @FindBy(how = How.CSS, using = "[id*='btnGuestCustomer']")
-    private WebElement continueSecurelyNextButton;
-    @FindBy(how = How.CSS, using = "input[id*='GuestCustomerEmailAddress']")
-    private WebElement guestCustomerEmailAddress;
 
     public String getPageUrl() {
         return "https://lv.sportsdirect.com";
@@ -72,14 +68,6 @@ public class HomePage extends CommonPage {
 
     public void clickContinueSecurelyButton() {
         continueSecurelyButton.click();
-    }
-
-    public void clickContinueSecurelyButtonAgain() {
-        continueSecurelyNextButton.click();
-    }
-
-    public void setRegistrationEmail(String email) {
-        guestCustomerEmailAddress.sendKeys(email);
     }
 
     public WebElement closeButton() {

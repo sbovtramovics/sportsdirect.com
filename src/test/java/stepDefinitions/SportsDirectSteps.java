@@ -15,6 +15,7 @@ public class SportsDirectSteps {
     static HomePage homePage;
     static LoginPage loginPage;
     static RegistrationPage registrationPage;
+    static WelcomePage welcomePage;
     static DeliveryPage deliveryPage;
     static AddressPage addressPage;
     static PaymentPage paymentPage;
@@ -27,6 +28,7 @@ public class SportsDirectSteps {
         this.wait = Hooks.wait;
         registrationPage = PageFactory.initElements(Hooks.driver, RegistrationPage.class);
         addressPage = PageFactory.initElements(Hooks.driver, AddressPage.class);
+        welcomePage = PageFactory.initElements(Hooks.driver, WelcomePage.class);
         deliveryPage = PageFactory.initElements(Hooks.driver, DeliveryPage.class);
         paymentPage = PageFactory.initElements(Hooks.driver, PaymentPage.class);
         creditCardPage = PageFactory.initElements(Hooks.driver, CreditCardPage.class);
@@ -122,8 +124,8 @@ public class SportsDirectSteps {
     public void iFillEmailFieldWithEmailAndClickTheContinueSecurelyButtonAgain(String email) {
         if (email.equals("random"))
             email = randomEmailAddress();
-        homePage.setRegistrationEmail(email);
-        homePage.clickContinueSecurelyButtonAgain();
+        welcomePage.setRegistrationEmail(email);
+        welcomePage.clickContinueSecurelyButtonAgain();
     }
 
     @And("^I fill the registration data with following information: \"([^\"]*)\", \"([^\"]*)\", \"([^\"]*)\", \"([^\"]*)\", \"([^\"]*)\", \"([^\"]*)\"$")
