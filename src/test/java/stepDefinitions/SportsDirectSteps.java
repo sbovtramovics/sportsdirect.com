@@ -154,6 +154,7 @@ public class SportsDirectSteps {
 
     @Then("^I verify that error with text: \"([^\"]*)\" is displayed$")
     public void iVerifyThatErrorWithTextIsDisplayed(String errorMessageText) {
+        wait.until(ExpectedConditions.visibilityOf(creditCardPage.errorMessage()));
         creditCardPage.veryfyThatErrorMessageIsDisplayed(errorMessageText);
         driver.switchTo().defaultContent();
     }

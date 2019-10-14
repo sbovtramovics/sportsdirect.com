@@ -42,4 +42,8 @@ public class CreditCardPage {
     public WebElement creditCardIFrame() {
         return creditCardIFrame;
     }
+
+    public WebElement errorMessage() {
+        return errorMessage;
+    }
 }
