@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-public class HomePage extends CommonPage{
+public class HomePage extends CommonPage {
     @FindBy(how = How.CSS, using = ".advertPopup button.close")
     private WebElement closeButton;
     @FindBy(how = How.CSS, using = "[href='/mens']")
@@ -19,10 +19,16 @@ public class HomePage extends CommonPage{
     private WebElement firstAvailableSize;
     @FindBy(how = How.ID, using = "aPersNoThanksBag")
     private WebElement noThanksButton;
-    @FindBy(how = How.ID, using = "aCheckout")
+    @FindBy(how = How.CLASS_NAME, using = "HeaderCheckoutLink")
     private WebElement checkoutButton;
     @FindBy(how = How.CSS, using = "[src*='AddToBag']")
     private WebElement noThanksIFrame;
+    @FindBy(how = How.XPATH, using = "(//*[contains(@class,'ContinueOn')])[2]")
+    private WebElement continueSecurelyButton;
+    @FindBy(how = How.CSS, using = "[id*='btnGuestCustomer']")
+    private WebElement continueSecurelyNextButton;
+    @FindBy(how = How.CSS, using = "input[id*='GuestCustomerEmailAddress']")
+    private WebElement guestCustomerEmailAddress;
 
     public String getPageUrl() {
         return "https://lv.sportsdirect.com";
@@ -58,6 +64,22 @@ public class HomePage extends CommonPage{
 
     public void clickCheckoutButton() {
         checkoutButton.click();
+    }
+
+    public WebElement checkoutButton() {
+        return checkoutButton;
+    }
+
+    public void clickContinueSecurelyButton() {
+        continueSecurelyButton.click();
+    }
+
+    public void clickContinueSecurelyButtonAgain() {
+        continueSecurelyNextButton.click();
+    }
+
+    public void setRegistrationEmail(String email) {
+        guestCustomerEmailAddress.sendKeys(email);
     }
 
     public WebElement closeButton() {

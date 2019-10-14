@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import static org.junit.Assert.assertTrue;
 
-public class RegistrationPage extends CommonPage{
+public class RegistrationPage extends CommonPage {
     @FindBy(how = How.CSS, using = "input[id*='FirstName']")
     private WebElement firstNameInputForm;
     @FindBy(how = How.CSS, using = "input[id*='LastName']")
@@ -24,7 +24,7 @@ public class RegistrationPage extends CommonPage{
     private WebElement monthSelectBox;
     @FindBy(how = How.CSS, using = ".DateSelector.Year")
     private WebElement yearSelectBox;
-    @FindBy(how = How.CSS, using = ".RegistrationSubmit")
+    @FindBy(how = How.CLASS_NAME, using = "RegistrationSubmit")
     private WebElement registrationSubmitButton;
     @FindBy(how = How.ID, using = "recaptcha-verify-button")
     private WebElement reCaptchaVerifyButton;
