@@ -41,12 +41,6 @@ public class SportsDirectSteps {
         driver.get(homePage.getPageUrl());
     }
 
-    @And("^I close pop up message$")
-    public void iClosePopUpMessage() {
-        wait.until(ExpectedConditions.visibilityOf(homePage.closeButton()));
-        homePage.clickCloseButton();
-    }
-
     @And("^I click Sign In button$")
     public void iClickSignInButton() {
         registrationPage.clickSignIn();

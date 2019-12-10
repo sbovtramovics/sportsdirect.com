@@ -5,8 +5,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 public class HomePage extends CommonPage {
-    @FindBy(how = How.CSS, using = ".advertPopup button.close")
-    private WebElement closeButton;
     @FindBy(how = How.CSS, using = "[href='/mens']")
     private WebElement menCategory;
     @FindBy(how = How.CSS, using = "[href='/football/football-boots/mens-football-boots?promo_name=landing-mens']")
@@ -28,10 +26,6 @@ public class HomePage extends CommonPage {
 
     public String getPageUrl() {
         return "https://lv.sportsdirect.com";
-    }
-
-    public void clickCloseButton() {
-        closeButton.click();
     }
 
     public void selectMenCategory() {
@@ -68,10 +62,6 @@ public class HomePage extends CommonPage {
 
     public void clickContinueSecurelyButton() {
         continueSecurelyButton.click();
-    }
-
-    public WebElement closeButton() {
-        return closeButton;
     }
 
     public WebElement noThanksIFrame() {

@@ -2,7 +2,6 @@ Feature: Registration of the new user on sprortsdirect.com
 
   Scenario: Registration of the new user
     When I am on the home page
-    And I close pop up message
     And I choose Men category
     And I choose Football Boots subcategory
     And I choose the first product
